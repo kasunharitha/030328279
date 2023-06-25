@@ -1,0 +1,166 @@
+exercise 3.1)
+
+
+public class Employee {
+    private String name;
+    private int age;
+    private double salary;
+    
+    // Getter and Setter for Name
+    public String getName() {
+        return name;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    // Getter and Setter for Age
+    public int getAge() {
+        return age;
+    }
+    
+    public void setAge(int age) {
+        this.age = age;
+    }
+    
+    // Getter and Setter for Salary
+    public double getSalary() {
+        return salary;
+    }
+    
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+}
+
+
+//testing 
+
+public class EmployeeTest {
+    public static void main(String[] args) {
+        Employee emp = new Employee();
+
+        // Set values using setter methods
+        emp.setName("John Doe");
+        emp.setAge(30);
+        emp.setSalary(50000.0);
+
+        // Get values using getter methods
+        System.out.println("Employee Name: " + emp.getName());
+        System.out.println("Employee Age: " + emp.getAge());
+        System.out.println("Employee Salary: " + emp.getSalary());
+    }
+}
+
+
+
+				//The same code but replaced with constructors.
+
+public class Employee {
+    private String name;
+    private int age;
+    private double salary;
+    
+    // Constructor
+    public Employee(String name, int age, double salary) {
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+    }
+    
+    // Getter for Name
+    public String getName() {
+        return name;
+    }
+    
+    // Getter for Age
+    public int getAge() {
+        return age;
+    }
+    
+    // Getter for Salary
+    public double getSalary() {
+        return salary;
+    }
+}
+
+
+					//testing
+
+public class EmployeeTest {
+    public static void main(String[] args) {
+        Employee emp = new Employee("John Doe", 30, 50000.0);
+
+        // Get values using getter methods
+        System.out.println("Employee Name: " + emp.getName());
+        System.out.println("Employee Age: " + emp.getAge());
+        System.out.println("Employee Salary: " + emp.getSalary());
+    }
+}
+
+
+exercise 3.3)
+
+
+public class Employee {
+    private String name;
+    private double basicSalary;
+    private double bonus;
+
+    // Constructor
+    public Employee(String name, double basicSalary, double bonus) {
+        this.name = name;
+        this.basicSalary = basicSalary;
+        this.bonus = bonus;
+    }
+
+    // Getter and Setter for Name
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Getter and Setter for Basic Salary
+    public double getBasicSalary() {
+        return basicSalary;
+    }
+
+    public void setBasicSalary(double basicSalary) {
+        this.basicSalary = basicSalary;
+    }
+
+    // Getter for Bonus
+    public double getBonus() {
+        return bonus;
+    }
+
+    // Method to calculate Bonus Amount
+    public double calculateBonusAmount() {
+        return basicSalary + bonus;
+    }
+}
+
+
+					//testing
+
+public class EmployeeTest {
+    public static void main(String[] args) {
+        // Create an Employee instance
+        Employee employee = new Employee("kasun", 70000, 5000);
+
+        // Output the employee details
+        System.out.println("Employee Name: " + employee.getName());
+        System.out.println("Basic Salary: " + employee.getBasicSalary());
+        System.out.println("Bonus: " + employee.getBonus());
+        System.out.println("Bonus Amount: " + employee.calculateBonusAmount());
+    }
+}
+
+
+
+
+
