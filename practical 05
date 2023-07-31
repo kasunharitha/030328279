@@ -1,0 +1,118 @@
+Exercise 01)
+
+1)
+public interface MyFirstInterface {
+    int x = 10; // With or without public static final keywords, it is implicitly public static final
+
+    void display(); // The abstract keyword is optional in interfaces
+}
+
+1. public interface MyFirstInterface {
+    int x = 10;
+}
+
+2, public interface MyFirstInterface {
+    public static final int x = 10;
+}
+
+In both cases, the variable x will be treated as a constant in the interface. However, there is no practical difference between the
+two approaches. When you declare a variable in an interface without explicitly using the public static final keywords, it is automatically 
+treated as a constant.
+
+2)
+1. public interface MyFirstInterface {
+    void display();
+}
+
+2. public interface MyFirstInterface {
+    abstract void display();
+}
+
+In both cases, the method display() is considered an abstract method within the interface. The abstract keyword is optional when defining methods 
+in an interface, and if it's omitted, the method is still treated as abstract.
+
+When you define a method in an interface, it is automatically treated as an abstract method, even if you don't explicitly use the abstract keyword.
+
+3)
+
+public class InterfaceImplemented implements MyFirstInterface {
+
+    @Override
+    public void display() {
+        // Attempt to change the value of x
+        // This will cause a compile-time error since x is implicitly final in the interface
+        // x = 20; // Uncommenting this line will result in a compilation error
+
+        // Printing the value of x
+        System.out.println("Value of x: " + x);
+    }
+
+    public static void main(String[] args) {
+        InterfaceImplemented obj = new InterfaceImplemented();
+        obj.display();
+    }
+}
+
+We can't change the value of x. If we do, we face a compilation error.
+
+Exercise 03)
+
+final class Student {
+    final int marks = 100;
+    final void display() {
+        // Implementation of the display method goes here
+    }
+}
+
+Since Student is declared as final, the attempt to extend it will result in a compilation error. The Undergraduate class cannot be a
+subclass of Student due to the final modifier on the Student class.
+
+Exercise 04)
+
+abstract class Shape {
+    // Abstract method to calculate the area
+    public abstract double calculateArea();
+
+    // Non-abstract method to display information about the shape
+    public void display() {
+        System.out.println("This is a shape.");
+    }
+}
+
+class Circle extends Shape {
+    private double radius;
+
+    // Constructor
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    // Override calculateArea method for Circle
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+class Rectangle extends Shape {
+    private double length;
+    private double width;
+
+    // Constructor
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    // Override calculateArea method for Rectangle
+    @Override
+    public double calculateArea() {
+        return length * width;
+    }
+}
+
+public class TestShape {
+    public static void main(String[] args) {
+        // Create a circle and calculate its area
+        Circle circle = new Circle(5.0);
+        double circleArea = circle.calculateArea();
