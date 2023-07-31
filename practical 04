@@ -1,0 +1,170 @@
+Exercise 01)
+
+class Employee {
+    private int empID;
+    private String empName;
+    private String empDesignation;
+
+    // Constructor
+    public Employee() {
+        // Default constructor
+    }
+
+    // Getters
+    public int getEmpID() {
+        return empID;
+    }
+
+    public String getEmpName() {
+        return empName;
+    }
+
+    public String getEmpDesignation() {
+        return empDesignation;
+    }
+
+    // Setters
+    public void setEmpID(int empID) {
+        this.empID = empID;
+    }
+
+    public void setEmpName(String empName) {
+        this.empName = empName;
+    }
+
+    public void setEmpDesignation(String empDesignation) {
+        this.empDesignation = empDesignation;
+    }
+}
+
+public class TestEmployee {
+    public static void main(String[] args) {
+        Employee mrBogdan = new Employee();
+        mrBogdan.setEmpID(1001);
+        mrBogdan.setEmpName("Mr. Bogdan");
+        mrBogdan.setEmpDesignation("Software Engineer");
+
+        Employee msBird = new Employee();
+        msBird.setEmpID(1002);
+        msBird.setEmpName("Ms. Bird");
+        msBird.setEmpDesignation("Graphic Designer");
+
+        // Print employee details using getters
+        System.out.println("Employee 1 Details:");
+        System.out.println("Employee ID: " + mrBogdan.getEmpID());
+        System.out.println("Employee Name: " + mrBogdan.getEmpName());
+        System.out.println("Employee Designation: " + mrBogdan.getEmpDesignation());
+
+        System.out.println("\nEmployee 2 Details:");
+        System.out.println("Employee ID: " + msBird.getEmpID());
+        System.out.println("Employee Name: " + msBird.getEmpName());
+        System.out.println("Employee Designation: " + msBird.getEmpDesignation());
+    }
+}
+
+
+Exercise 02)
+
+----------------------------Execution-------------------------------
+
+public class TestInheritance {
+    public static void main(String[] args) {
+        SuperB b = new SuperB();
+        b.setIt(2);
+        b.increase();
+        b.triple();
+        System.out.println(b.returnIt());
+
+        SubC c = new SubC();
+        c.setIt(2);
+        c.increase();
+        c.triple();
+        System.out.println(c.returnIt());
+    }
+}
+
+
+-------------------result---------------------
+9
+11
+
+
+Exercise 03)
+
+class Person {
+    private String name;
+    private int id;
+
+    // Constructor
+    public Person(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+
+    // Getters and setters
+    public String getName() {
+        return name;
+    }
+
+    public int getId() {
+        return id;
+    }
+}
+
+class Student extends Person {
+    private String course;
+
+    // Constructor
+    public Student(String name, int id, String course) {
+        super(name, id);
+        this.course = course;
+    }
+
+    // Getter and setter for course
+    public String getCourse() {
+        return course;
+    }
+
+    public void setCourse(String course) {
+        this.course = course;
+    }
+}
+
+class Lecturer extends Person {
+    private String programme;
+
+    // Constructor
+    public Lecturer(String name, int id, String programme) {
+        super(name, id);
+        this.programme = programme;
+    }
+
+    // Getter and setter for programme
+    public String getProgramme() {
+        return programme;
+    }
+
+    public void setProgramme(String programme) {
+        this.programme = programme;
+    }
+}
+
+public class TestPerson {
+    public static void main(String[] args) {
+        // Creating a Student object
+        Student student = new Student("John Doe", 1001, "Computer Science");
+        System.out.println("Student Information:");
+        System.out.println("Name: " + student.getName());
+        System.out.println("ID: " + student.getId());
+        System.out.println("Course: " + student.getCourse());
+
+        System.out.println();
+
+        // Creating a Lecturer object
+        Lecturer lecturer = new Lecturer("Jane Smith", 2001, "Data Science");
+        System.out.println("Lecturer Information:");
+        System.out.println("Name: " + lecturer.getName());
+        System.out.println("ID: " + lecturer.getId());
+        System.out.println("Programme: " + lecturer.getProgramme());
+    }
+}
